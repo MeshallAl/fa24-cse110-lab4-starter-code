@@ -3,8 +3,8 @@ import { AppContext } from "../../context/AppContext";
 
 const AddExpenseForm = () => {
   // Exercise: Consume the AppContext here
-
-  const context = useContext(AppContext);
+  const {expenses} = useContext(AppContext);
+  const {setExpenses} = useContext(AppContext);
   
   // Exercise: Create name and cost to state variables
 
@@ -17,7 +17,7 @@ const AddExpenseForm = () => {
     // Exercise: Add add new expense to expenses context array
     
     const newExpense = {id: Date.now(), name, cost};
-    context.setExpenses([...context.expenses, newExpense]);
+    setExpenses([...expenses, newExpense]);
     setName("");
     setCost(0);
   };
