@@ -18,6 +18,8 @@ const AddExpenseForm = () => {
     
     const newExpense = {id: Date.now(), name, cost};
     context.setExpenses([...context.expenses, newExpense]);
+    setName("");
+    setCost(0);
   };
 
   return (
